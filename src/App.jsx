@@ -1,7 +1,13 @@
-function HolaMundo() {
+import TaskList from './components/TaskList';
+import TaskForm from './components/TaskForm'
+
+function App() {
   return (
-    <div>HolaMundo</div>
+    <>
+      <TaskForm />
+      <TaskList />
+    </>
   )
 }
 
-export default HolaMundo
+export default App

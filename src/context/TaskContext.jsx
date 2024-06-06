@@ -7,7 +7,9 @@ export function TaskContextProvider(props) {
   const [tasks, setTasks] = useState([]);
 
   function createTask(task) {
-    setTasks([...tasks, {
+    setTasks([
+      ...tasks, 
+    {
       title: task.title,
       id: tasks.length,
       description: task.description,
@@ -15,7 +17,7 @@ export function TaskContextProvider(props) {
   }
 
   function deleteTask(taskId) {
-    setTasks(tasks.filter (task => task.id !== taskId))
+    setTasks(tasks.filter((task) => task.id !== taskId))
   }
 
   useEffect(() => {
@@ -23,10 +25,13 @@ export function TaskContextProvider(props) {
   }, []);
 
   return (
-    <TaskContext.Provider value={{
+    <TaskContext.Provider 
+    value={{
       tasks,
       deleteTask,
       createTask,
-    }}>{props.children}</TaskContext.Provider>
+    }}>
+      {props.children}
+    </TaskContext.Provider>
   );
 }
